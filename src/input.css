@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Classes the original markup uses that Tailwind v3 core does not ship
+   (they come from tailwindcss-animate / Tailwind v4). Defined here so the
+   modals get the fade and zoom they were written for. */
+@layer utilities {
+  .backdrop-blur-xs { -webkit-backdrop-filter: blur(2px); backdrop-filter: blur(2px); }
+  @keyframes bwg-enter { from { opacity: var(--tw-enter-opacity, 1); transform: scale(var(--tw-enter-scale, 1)); } }
+  .animate-in { animation: bwg-enter .2s ease-out; }
+  .fade-in { --tw-enter-opacity: 0; }
+  .zoom-in { --tw-enter-scale: .96; }
+  @media (prefers-reduced-motion: reduce) { .animate-in { animation: none; } }
+}

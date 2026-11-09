@@ -1,0 +1,100 @@
+# BWG Global Advisory website
+
+The public website for BWG Global Advisory, published at **https://www.bwgglobal.net**. It's a single-page site with Home, Services, Discovery and About Us views, and an interactive Discovery Assessment that produces a scored requirements brief in the visitor's browser.
+
+```
+index.html        <- the built, self-contained page that GitHub Pages serves (do not edit by hand)
+src/index.html    <- the page you edit
+src/input.css     <- Tailwind entry file
+build.mjs         <- build script: src/index.html -> index.html
+package.json      <- pinned build tools
+CNAME             <- tells GitHub Pages the site's domain: www.bwgglobal.net
+.nojekyll         <- tells GitHub Pages to serve files as-is
+```
+
+## Publish on GitHub Pages
+
+1. Create a new **public** repository on GitHub. On a free account, GitHub Pages only works with public repositories. Upload everything in this folder, including `CNAME`. Some computers hide `.gitignore` and `.nojekyll`; the site works without them. Upload the folder's contents, so that `index.html` and `CNAME` sit at the top level of the repository. Either drag and drop the files on the repository page, or from a terminal:
+   ```bash
+   git init
+   git add .
+   git commit -m "BWG advisory website"
+   git branch -M main
+   git remote add origin https://github.com/<your-account>/<repo-name>.git
+   git push -u origin main
+   ```
+2. In the repository, go to **Settings → Pages**.
+3. Under **Build and deployment**, set **Source** to **Deploy from a branch**, the branch to **main** and the folder to **/ (root)**, then press **Save**.
+4. Because of the `CNAME` file, the **Custom domain** box on the same screen should already read `www.bwgglobal.net`. If it's empty, type `www.bwgglobal.net` and press **Save**.
+
+## Point bwgglobal.net at GitHub
+
+Add these records in the DNS settings wherever `bwgglobal.net` is registered (for example GoDaddy, Namecheap or Cloudflare). Replace `<your-account>` with your GitHub username or organisation name. Leave out the repository name.
+
+| Type | Host / Name | Value |
+|---|---|---|
+| CNAME | `www` | `<your-account>.github.io` |
+| A | `@` | `185.199.108.153` |
+| A | `@` | `185.199.109.153` |
+| A | `@` | `185.199.110.153` |
+| A | `@` | `185.199.111.153` |
+| AAAA (optional, IPv6) | `@` | `2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153`, `2606:50c0:8003::153` (one record each) |
+
+- **Remove any old records first.** Delete existing A, AAAA or CNAME records for `@` and `www` (for example a registrar's "parked" page) before adding these, or they will conflict.
+- **What these records do:** the `www` record serves the site at **www.bwgglobal.net**, the main address. The `@` records make plain **bwgglobal.net** redirect there automatically.
+- **Timing:** DNS changes can take from a few minutes to 24 hours to spread. **Settings → Pages** shows a green "DNS check successful" message when they're working.
+- **HTTPS:** once the DNS check passes, tick **Enforce HTTPS** in **Settings → Pages**. The option can take up to 24 hours to become available.
+- **Recommended:** verify the domain in your GitHub account (**Settings → Pages → Add a domain**, under your profile or organisation settings). This stops anyone else's GitHub repository from claiming `bwgglobal.net`.
+- **Email:** don't change any **MX** or **TXT** records. Those carry email for `advisory@` and `info@bwgglobal.net`, and the website records above don't affect them.
+
+No build runs on GitHub. The committed `index.html` is already complete: Tailwind CSS compiled, icons and font embedded, and no external requests.
+
+## Making changes
+
+1. Edit `src/index.html`. It still loads Tailwind and Lucide from CDNs, so you can open it straight in a browser while you work (with an internet connection).
+2. Rebuild the page that gets published (Node.js 18 or newer):
+   ```bash
+   npm install      # first time only
+   npm run build    # writes ./index.html
+   ```
+3. Commit **both** `src/index.html` and `index.html`, then push. GitHub Pages republishes automatically.
+
+If you skip step 2, the live site won't show your edit, because Pages serves `index.html`, not `src/index.html`.
+
+### Tailwind notes
+- The build uses **Tailwind CSS v3** (pinned to 3.4.19). Don't upgrade to v4: it changed the CLI (`@tailwindcss/cli`) and the configuration format this page uses.
+- Theme colours and fonts live in the `tailwind.config = {...}` block near the top of `src/index.html`. The build reads them from there, so there is no separate config file.
+- Write class names in full, for example `text-sage-600`. Tailwind only generates classes it can see as complete words, including inside the page's JavaScript.
+
+## Colour palette
+
+| Role | Hex |
+|---|---|
+| Ink navy (headings, buttons, footer) | `#13233A` |
+| Harbour blue (links, labels, selected states) | `#3A5577` |
+| Stone (body text / borders) | `#57534E` / `#D9D2C3` |
+| Ivory (background) | `#F7F5F0` |
+| Brass (rules, figures, accents) | `#A4844C`, text shade `#6B522E` |
+| Sage / Claret (status only) | `#4B6356` / `#8B3A3A` |
+
+## Before going live
+
+- **Testimonials:** four quotes were reworded to credit the BWG team instead of an individual. Confirm each client is happy with the new wording.
+- **Email addresses:** the footer lists `advisory@bwgglobal.net` (advisory enquiries) and `info@bwgglobal.net` (general). The Discovery Assessment's "Email BWG" button drafts an email to `advisory@bwgglobal.net`. Send a test message to each address to confirm both mailboxes receive mail.
+- **Discovery Assessment:** answers stay in the visitor's browser and nothing is sent to a server.
+- **"Book a Strategy Session" form:** connected. When a visitor submits it:
+  1. **Web3Forms** emails their name, email, company, focus area and message to the address on your Web3Forms account. If they came from the Discovery Assessment results, their assessment summary is included.
+  2. **Calendly** then opens your booking calendar (`calendly.com/rahul-shanker-bwgglobal-strategy-session`) with their name and email pre-filled. If Calendly's pop-up can't load, a "Choose a time" button opens the booking page in a new tab.
+  3. **If sending fails,** the visitor sees `advisory@bwgglobal.net` and a direct booking link instead.
+
+  **Send one real test** from the live site, confirm the email arrives (check spam the first time), then book and cancel a test slot in Calendly.
+- **Web3Forms settings:** the access key sits in the page code. That's by design: it only lets visitors send *you* an email. In your Web3Forms dashboard, set the notification email you want (for example `advisory@bwgglobal.net`). The free plan allows 250 submissions a month, and submissions stop once that limit is reached.
+- **Calendly settings:** the free plan allows one event type. Confirm the event's duration, availability and video link. To change the link, edit `BWG_CALENDLY_URL` (and the `cf-book` link) in `src/index.html`, then rebuild.
+- **Privacy notice:** visitor details are processed by Web3Forms and Calendly. Mention both in your privacy notice.
+
+## Third-party components
+
+- **Libre Baskerville** font: © The Libre Baskerville Project Authors, SIL Open Font License 1.1. Embedded from `@fontsource/libre-baskerville`.
+- **Lucide** icons (search, menu, arrow-right, quote, check, x): © Lucide Contributors, ISC License.
+- **Tailwind CSS**: © Tailwind Labs, MIT License. Used at build time only.
+- World map outline derived from Natural Earth (public domain).
