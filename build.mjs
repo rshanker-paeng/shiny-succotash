@@ -122,7 +122,7 @@ function buildPage(file) {
       const b64 = fs.readFileSync(path.join(FONT_DIR, file)).toString('base64');
       return `@font-face{font-family:'Libre Baskerville';font-style:${style};font-weight:${weight};font-display:swap;src:url(data:font/woff2;base64,${b64}) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}`;
     };
-    const fonts = face('libre-baskerville-latin-400-normal.woff2', 400, 'normal') + face('libre-baskerville-latin-400-italic.woff2', 400, 'italic') + face('libre-baskerville-latin-700-normal.woff2', 700, 'normal');
+    const fonts = face('libre-baskerville-latin-400-normal.woff2', 400, 'normal') + face('libre-baskerville-latin-400-italic.woff2', 400, 'italic') + face('libre-baskerville-latin-700-normal.woff2', 700, 'normal') + face('libre-baskerville-latin-700-italic.woff2', 700, 'italic');
     html = html.replace('<style>', `<style data-font="Libre Baskerville, SIL Open Font License">${fonts}</style>\n    <style>`);
     notes.push('font embedded');
   }
