@@ -84,7 +84,7 @@ If you skip step 2, the live site won't show your edit, because Pages serves `in
 - **Discovery Assessment:** answers stay in the visitor's browser and nothing is sent to a server.
 - **"Book a Strategy Session" form:** connected. When a visitor submits it:
   1. **Web3Forms** emails their name, email, company, focus area and message to the address on your Web3Forms account. If they came from the Discovery Assessment results, their assessment summary is included.
-  2. **Calendly** then opens your booking calendar (`calendly.com/rahul-shanker-bwgglobal-strategy-session`) with their name and email pre-filled. If Calendly's pop-up can't load, a "Choose a time" button opens the booking page in a new tab.
+  2. **Calendly** then opens your booking calendar (`calendly.com/bwg-strategy-session/30min`) with their name and email pre-filled. If Calendly's pop-up can't load, a "Choose a time" button opens the booking page in a new tab.
   3. **If sending fails,** the visitor sees `advisory@bwgglobal.net` and a direct booking link instead.
 
   **Send one real test** from the live site, confirm the email arrives (check spam the first time), then book and cancel a test slot in Calendly.
