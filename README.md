@@ -1,16 +1,69 @@
 # BWG Global Advisory website
 
-The public website for BWG Global Advisory, published at **https://www.bwgglobal.net**. It's a single-page site with Home, Services, Discovery and About Us views, and an interactive Discovery Assessment that produces a scored requirements brief in the visitor's browser.
+The public website for BWG Global Advisory, published at **https://www.bwgglobal.net**. It's a single-page site with Home, Approach, Services, Discovery and About Us views, and an interactive Discovery Assessment that produces a scored requirements brief in the visitor's browser. Each view has its own link, for example `https://www.bwgglobal.net/#approach`.
 
 ```
-index.html        <- the built, self-contained page that GitHub Pages serves (do not edit by hand)
-src/index.html    <- the page you edit
-src/input.css     <- Tailwind entry file
-build.mjs         <- build script: src/index.html -> index.html
-package.json      <- pinned build tools
-CNAME             <- tells GitHub Pages the site's domain: www.bwgglobal.net
-.nojekyll         <- tells GitHub Pages to serve files as-is
+index.html            <- the built, self-contained page that GitHub Pages serves (do not edit by hand)
+src/index.html        <- the page you edit
+src/input.css         <- Tailwind entry file
+build.mjs             <- build script: src/index.html -> index.html
+package.json          <- pinned build tools
+CNAME                 <- tells GitHub Pages the site's domain: www.bwgglobal.net
+robots.txt            <- tells search engines they may index the site, and where the sitemap is
+sitemap.xml           <- the page list for search engines
+og-image.png          <- image shown when the site is shared on LinkedIn, Slack, iMessage, etc. (1200x630)
+logo.png              <- logo for search engines (structured data)
+favicon.svg / favicon.ico / apple-touch-icon.png  <- browser tab and home-screen icons
+.nojekyll             <- tells GitHub Pages to serve files as-is
 ```
+
+## Analytics (Umami Cloud)
+
+The site is ready for [Umami](https://umami.is). The Hobby plan is free: 1 website, 100,000 events a month and 6 months of history. Umami uses no cookies, so no cookie banner is needed.
+
+**Status:** switched on. Website ID `29b95225-8589-4c2e-9228-350bd596418f` is set in both `index.html` and `src/index.html`.
+
+**To change the account later**
+1. Sign up at umami.is, choose **Add website**, name it "BWG Global Advisory" and enter the domain `www.bwgglobal.net`.
+2. Copy the **Website ID** (a long code like `a1b2c3d4-...`).
+3. In both `index.html` and `src/index.html`, find `var UMAMI_WEBSITE_ID = '';` and paste the ID between the quotes. You can do this in GitHub's web editor: open the file, click the pencil icon, press Cmd+F to find the line, then commit.
+
+Tracking only runs on www.bwgglobal.net, so visits from your own computer while editing are not counted.
+
+**What you'll see in Umami**
+- **Visitors, visits and page views**, with countries, regions and cities, devices, browsers and referring sites.
+- **Pages:** each tab counts as its own page (`/`, `/#approach`, `/#services`, `/#discovery`, `/#about`).
+- **Events:**
+  - `Click: <button or link text>` for every button and link, with the tab it was on.
+  - `Practice details opened`, `Maturity widget scored`, `Site search`, `Email link clicked`.
+  - `Strategy session form opened`, `Strategy session request sent` / `failed`, and `Calendly opened`.
+  - `Discovery step`, `Discovery completed` (areas, score, number of gaps), and `Discovery brief downloaded`, `copied`, `printed` and `email to BWG`.
+
+No names, email addresses, company names or assessment answers are sent to Umami. Mention Umami in your privacy notice.
+
+## Search engine optimisation
+
+**Already in the page**
+- **Title:** "BWG Global Advisory | Technology Advisory, Startup to Exit". Each tab sets its own title when opened.
+- **Description:** used by Google as the snippet under the title.
+- **Canonical address, robots and theme colour.**
+- **Social sharing (Open Graph and X cards):** tags that use `og-image.png`.
+- **Structured data (JSON-LD):** Organization, WebSite and WebPage, describing BWG Global Advisory with founding year 2012, regions served, contact emails and the four services.
+- **Headings:** one main heading (H1) on the page, with each tab's title as an H2.
+- **Files:** `robots.txt`, `sitemap.xml` and the icons.
+
+**Do once after publishing**
+1. **Google Search Console** (search.google.com/search-console):
+   - Choose **Add property → Domain**, enter `bwgglobal.net`, and add the TXT record it gives you in GoDaddy's DNS settings. GoDaddy may offer to do this automatically.
+   - Then go to **Sitemaps** and submit `https://www.bwgglobal.net/sitemap.xml`.
+   - Use **URL inspection → Request indexing** for `https://www.bwgglobal.net/`.
+2. **Bing Webmaster Tools** (bing.com/webmasters): choose **Import from Google Search Console**. This also covers DuckDuckGo and Yahoo.
+3. **Test the sharing preview:** paste `https://www.bwgglobal.net` into LinkedIn's Post Inspector (linkedin.com/post-inspector) to check the image and text.
+4. **Test the structured data:** run Google's Rich Results Test (search.google.com/test/rich-results) on the address.
+
+**Good to know**
+- **One page to Google:** all tabs live on one page. Google indexes all the text, but it treats the site as a single page. To rank individual services for their own searches (for example "PE technical due diligence"), the next step would be separate pages per service.
+- **When you change content:** update the `<lastmod>` date in `sitemap.xml` when you make significant changes.
 
 ## Publish on GitHub Pages
 
