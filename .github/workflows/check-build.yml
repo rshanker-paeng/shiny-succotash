@@ -1,0 +1,26 @@
+name: Check build
+
+# Fails if the committed index.html doesn't match what `npm run build` produces
+# from src/index.html, so the live site can't drift from the source.
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - name: Verify index.html is up to date
+        run: |
+          git diff --exit-code index.html || {
+            echo "::error::index.html is out of date. Run 'npm run build' and commit the result."
+            exit 1
+          }
