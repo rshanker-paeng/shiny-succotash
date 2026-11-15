@@ -151,3 +151,11 @@ If you skip step 2, the live site won't show your edit, because Pages serves `in
 - **Lucide** icons (search, menu, arrow-right, quote, check, x): © Lucide Contributors, ISC License.
 - **Tailwind CSS**: © Tailwind Labs, MIT License. Used at build time only.
 - World map outline derived from Natural Earth (public domain).
+
+## Version control workflow
+
+- `main` is the live site: GitHub Pages publishes it to www.bwgglobal.net.
+- Make changes on a branch (for example `content/update-services`), not on `main`.
+- Edit `src/index.html`, run `npm install` once and then `npm run build`, and commit both `src/index.html` and the rebuilt `index.html`.
+- Open a pull request into `main`. The **Check build** workflow confirms `index.html` matches the source.
+- Merge the pull request to publish. To undo a change, revert its pull request.
