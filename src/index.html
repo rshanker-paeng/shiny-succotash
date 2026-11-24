@@ -1246,26 +1246,32 @@
 
                     </div>
 
-                    <!-- Practice 05: Technical Program Management (spans all four) -->
-                    <div class="card-container glass-card rounded-2xl p-6 md:p-8 shadow-glass hover:shadow-glass-hover transition-all duration-300 border border-stone-200/80 relative overflow-hidden mt-6">
-                        <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-claret-700 via-claret-500 to-claret-100"></div>
+                    <!-- Practice 05: Technical Program Management (foundation under all four) -->
+                    <div class="hidden lg:grid grid-cols-4 gap-6" aria-hidden="true">
+                        <div class="flex justify-center"><div class="w-0.5 h-7 rounded bg-gradient-to-b from-brass-300 to-brass-500"></div></div>
+                        <div class="flex justify-center"><div class="w-0.5 h-7 rounded bg-gradient-to-b from-brass-300 to-brass-500"></div></div>
+                        <div class="flex justify-center"><div class="w-0.5 h-7 rounded bg-gradient-to-b from-brass-300 to-brass-500"></div></div>
+                        <div class="flex justify-center"><div class="w-0.5 h-7 rounded bg-gradient-to-b from-brass-300 to-brass-500"></div></div>
+                    </div>
+                    <div class="card-container rounded-2xl p-6 md:p-8 shadow-glass hover:shadow-glass-hover transition-all duration-300 relative overflow-hidden mt-6 lg:mt-0 bg-bwg-navy text-white">
+                        <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-brass-700 via-brass-400 to-brass-300"></div>
                         <div class="flex flex-col md:flex-row md:items-center gap-6">
-                            <div class="shrink-0 icon-3d-wrapper mx-auto md:mx-0">
-                                <svg class="w-24 h-24" aria-hidden="true"><use href="#icon-program"/></svg>
+                            <div class="shrink-0 mx-auto md:mx-0 w-24 h-24 rounded-2xl bg-white flex items-center justify-center">
+                                <svg class="w-20 h-20" aria-hidden="true"><use href="#icon-program"/></svg>
                             </div>
                             <div class="flex-1">
-                                <span class="text-xs font-extrabold text-claret-700 uppercase tracking-widest">Spans all four practices</span>
-                                <h3 class="text-xl font-bold text-bwg-navy mt-1">Technical Program Management</h3>
-                                <p class="text-xs md:text-sm text-stone-500 mt-2 font-medium leading-relaxed">
+                                <span class="text-xs font-extrabold text-brass-300 uppercase tracking-widest">The foundation under all four practices</span>
+                                <h3 class="text-xl font-bold text-white mt-1">Technical Program Management</h3>
+                                <p class="text-xs md:text-sm text-stone-300 mt-2 font-medium leading-relaxed">
                                     Led by Technology Strategy, program leadership that turns strategy into shipped outcomes across engineering teams, vendors and workstreams.
                                 </p>
-                                <ul class="mt-3 flex flex-wrap gap-x-6 gap-y-1 text-xs text-stone-700">
-                                    <li class="flex items-start gap-2"><span class="text-claret-500 font-bold">•</span><span>Program Setup &amp; PMO</span></li>
-                                    <li class="flex items-start gap-2"><span class="text-claret-500 font-bold">•</span><span>Program Rescue &amp; Recovery</span></li>
-                                    <li class="flex items-start gap-2"><span class="text-claret-500 font-bold">•</span><span>Dependency &amp; Risk Management</span></li>
+                                <ul class="mt-3 flex flex-wrap gap-x-6 gap-y-1 text-xs text-stone-200">
+                                    <li class="flex items-start gap-2"><span class="text-brass-300 font-bold">•</span><span>Program Setup &amp; PMO</span></li>
+                                    <li class="flex items-start gap-2"><span class="text-brass-300 font-bold">•</span><span>Program Rescue &amp; Recovery</span></li>
+                                    <li class="flex items-start gap-2"><span class="text-brass-300 font-bold">•</span><span>Dependency &amp; Risk Management</span></li>
                                 </ul>
                             </div>
-                            <button onclick="openPillarModal(5)" class="w-full md:w-auto py-2.5 px-6 rounded-lg bg-stone-100 hover:bg-claret-50 text-claret-700 font-bold text-xs tracking-wider uppercase transition text-center border border-claret-100">
+                            <button onclick="openPillarModal(5)" class="w-full md:w-auto py-2.5 px-6 rounded-lg bg-white/10 hover:bg-white/20 text-white font-bold text-xs tracking-wider uppercase transition text-center border border-white/25">
                                 Learn More
                             </button>
                         </div>
@@ -1456,7 +1462,7 @@
                                 <span class="text-harbour-600 font-bold">•</span><span>Executive CTO Advisory</span>
                             </div>
                         </div>
-                        <p class="text-xs text-stone-500 italic leading-relaxed">Technology Strategy also leads <button onclick="switchTab('services','practice-tpm')" class="font-bold not-italic text-claret-700 hover:text-bwg-navy underline underline-offset-2">Technical Program Management</button>, carrying the plan through delivery across all four practices.</p>
+                        <p class="text-xs text-stone-500 italic leading-relaxed">Technology Strategy also leads <button onclick="switchTab('services','practice-tpm')" class="font-bold not-italic text-claret-700 hover:text-bwg-navy underline underline-offset-2">Technical Program Management</button>, the foundation that carries the plan through delivery across all four practices.</p>
                         <button onclick="openPillarModal(1)" class="inline-flex items-center gap-2 text-sm font-bold text-harbour-700 hover:text-harbour-900 transition pt-2">
                             View Core Deliverables
                         </button>
@@ -1574,7 +1580,7 @@
                 <div id="practice-tpm" class="card-container scroll-mt-28 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center glass-card p-8 md:p-12 rounded-2xl border border-stone-200/80 shadow-glass hover:shadow-glass-hover transition-all duration-300 relative overflow-hidden">
                     <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-claret-700 via-claret-500 to-claret-100"></div>
                     <div class="lg:col-span-7 space-y-4">
-                        <span class="text-xs font-extrabold text-claret-700 uppercase tracking-widest">Practice Area 05 &middot; Spans all four practices</span>
+                        <span class="text-xs font-extrabold text-claret-700 uppercase tracking-widest">Practice Area 05 &middot; The foundation under all four practices</span>
                         <h2 class="text-2xl md:text-3xl font-bold text-bwg-navy">Technical Program Management</h2>
                         <p class="text-stone-600 leading-relaxed text-sm md:text-base">
                             Turning strategy into delivered outcomes. We set up the program office, dependency management and delivery governance that keep complex, multi-team technology programs on scope, on budget and on date, from platform migrations and integrations to post-acquisition consolidation.
@@ -1593,7 +1599,7 @@
                                 <span class="text-claret-500 font-bold">•</span><span>Executive Reporting &amp; Delivery Metrics</span>
                             </div>
                         </div>
-                        <p class="text-xs text-stone-500 italic leading-relaxed">Led by Technology Strategy and applied across Cloud, AI &amp; Data, and Digital Experience programs.</p>
+                        <p class="text-xs text-stone-500 italic leading-relaxed">Led by Technology Strategy, and the foundation under every Strategy, Cloud, AI &amp; Data and Digital Experience program.</p>
                         <button onclick="openPillarModal(5)" class="inline-flex items-center gap-2 text-sm font-bold text-claret-700 hover:text-bwg-navy transition pt-2">
                             View Core Deliverables
                         </button>
@@ -2232,14 +2238,14 @@
                     <div class="lg:col-span-2">
                         <p class="apx-eyebrow">One team, one plan</p>
                         <h2 class="text-3xl md:text-4xl font-bold text-bwg-navy mt-2">Four practices, sequenced by dependency</h2>
-                        <p class="mt-4 text-stone-600 text-pretty">Specialist firms optimise one layer and leave the rest to someone else. We plan all four practices together and in the right order, so foundations are in place before anything is built on them, and nothing is built twice. Technical Program Management, led by Technology Strategy, spans all four and keeps the plan, dependencies and risks in one place.</p>
+                        <p class="mt-4 text-stone-600 text-pretty">Specialist firms optimise one layer and leave the rest to someone else. We plan all four practices together and in the right order, so foundations are in place before anything is built on them, and nothing is built twice. Technical Program Management, led by Technology Strategy, is the foundation under all four: it keeps the plan, dependencies and risks in one place so each practice can deliver.</p>
                         <button onclick="switchTab('services')" class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-bwg-bright hover:text-bwg-navy">Explore the practices <span aria-hidden="true">&rarr;</span></button>
                     </div>
                     <div class="lg:col-span-3">
                         <!-- desktop / tablet: cycle diagram -->
-                        <svg viewBox="-8 4 652 528" class="hidden sm:block w-full h-auto" role="img" aria-labelledby="apx-hub-title apx-hub-desc">
+                        <svg viewBox="-38 4 716 528" class="hidden sm:block w-full h-auto" role="img" aria-labelledby="apx-hub-title apx-hub-desc">
                             <title id="apx-hub-title">How the four BWG practices connect around your business outcome</title>
-                            <desc id="apx-hub-desc">Step 1, Technology Strategy and Product, sets direction. Step 2, Hybrid Cloud Infrastructure, provides secure and scalable foundations. Step 3, AI and Data Enablement, builds data and AI on those foundations. Step 4, Digital Experience and Interfaces, delivers it to users. Results are measured and the plan re-baselined, which feeds back into strategy. Technical Program Management, led by Technology Strategy, spans all four practices.</desc>
+                            <desc id="apx-hub-desc">Step 1, Technology Strategy and Product, sets direction. Step 2, Hybrid Cloud Infrastructure, provides secure and scalable foundations. Step 3, AI and Data Enablement, builds data and AI on those foundations. Step 4, Digital Experience and Interfaces, delivers it to users. Results are measured and the plan re-baselined, which feeds back into strategy. Technical Program Management, led by Technology Strategy, is the foundation underneath all four practices, shown as a base with a supporting column at each side.</desc>
                             <defs>
                                 <marker id="apx-ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1 9 5 1 9" fill="none" stroke="#3A5577" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
                                 <marker id="apx-ah-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1 9 5 1 9" fill="none" stroke="#B0822F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
@@ -2283,11 +2289,17 @@
                                 <text x="76" y="386" font-weight="700" font-size="14" fill="#13233A">Digital Experience</text>
                                 <text x="76" y="408" fill="#57534E">Delivered to users</text><text x="76" y="426" fill="#57534E">in one experience</text>
                                 </g>
-                            <!-- program management band -->
+                            <!-- program management foundation: side columns + base -->
+                            <g fill="#6E2C2C">
+                                <rect x="-28" y="46" width="14" height="440" rx="7"/>
+                                <rect x="654" y="46" width="14" height="440" rx="7"/>
+                            </g>
+                            <path d="M-14 72H4M636 72H654" fill="none" stroke="#B0822F" stroke-width="2" stroke-dasharray="2 5" stroke-linecap="round"/>
+                            <path d="M-14 398H4M636 398H654" fill="none" stroke="#B0822F" stroke-width="2" stroke-dasharray="2 5" stroke-linecap="round"/>
                             <path d="M122 450V470M518 450V470" fill="none" stroke="#B0822F" stroke-width="1.5" stroke-dasharray="2 5" stroke-linecap="round"/>
-                            <g filter="url(#apx-sh)"><rect x="4" y="470" width="632" height="58" rx="29" fill="#13233A"/></g>
+                            <rect x="-28" y="470" width="696" height="58" rx="16" fill="#6E2C2C"/>
                             <text x="320" y="494" text-anchor="middle" font-size="14.5" font-weight="700" fill="#fff">Technical Program Management</text>
-                            <text x="320" y="513" text-anchor="middle" font-size="12.5" fill="#D2B783">Led by Strategy &amp; Product &#183; spans all four practices</text>
+                            <text x="320" y="513" text-anchor="middle" font-size="12.5" fill="#F3DCDA">The foundation under all four practices &#183; led by Strategy &amp; Product</text>
                         </svg>
                         <!-- phone: stacked sequence -->
                         <ol class="sm:hidden space-y-3" aria-label="How the four practices connect">
@@ -2295,7 +2307,7 @@
                             <li class="apx-mstep"><svg class="w-11 h-11 shrink-0" aria-hidden="true"><use href="#icon-cloud"/></svg><div><p class="font-bold text-bwg-navy">2 · Hybrid Cloud</p><p class="text-sm text-stone-600">Secure, scalable foundations</p></div></li>
                             <li class="apx-mstep"><svg class="w-11 h-11 shrink-0" aria-hidden="true"><use href="#icon-ai"/></svg><div><p class="font-bold text-bwg-navy">3 · AI &amp; Data</p><p class="text-sm text-stone-600">Data and AI built on those foundations</p></div></li>
                             <li class="apx-mstep"><svg class="w-11 h-11 shrink-0" aria-hidden="true"><use href="#icon-experience"/></svg><div><p class="font-bold text-bwg-navy">4 · Digital Experience</p><p class="text-sm text-stone-600">Delivered to users in one experience</p></div></li>
-                            <li class="apx-mstep"><svg class="w-11 h-11 shrink-0" aria-hidden="true"><use href="#icon-program"/></svg><div><p class="font-bold text-bwg-navy">Across all four &middot; Program Management</p><p class="text-sm text-stone-600">Led by Strategy &amp; Product; keeps plan, dependencies and risks in one place</p></div></li>
+                            <li class="apx-mstep !bg-claret-700 !border-claret-700"><span class="w-11 h-11 shrink-0 rounded-xl bg-white flex items-center justify-center"><svg class="w-9 h-9" aria-hidden="true"><use href="#icon-program"/></svg></span><div><p class="font-bold text-white">Foundation &middot; Program Management</p><p class="text-sm text-claret-100">Underpins all four. Led by Strategy &amp; Product; keeps plan, dependencies and risks in one place</p></div></li>
                             <li class="text-center text-sm italic text-brass-700 pt-1">Then measure, re-baseline and plan the next stage</li>
                         </ol>
                     </div>
@@ -2599,7 +2611,7 @@
                 title: "Technical Program Management",
                 badge: "Practice Area 05",
                 color: "text-claret-700",
-                description: "Led by Technology Strategy and spanning all four practices, we turn strategy into delivered outcomes with the program office, dependency management and delivery governance that keep complex, multi-team programs on scope, on budget and on date.",
+                description: "Led by Technology Strategy, Technical Program Management is the foundation under all four practices. We turn strategy into delivered outcomes with the program office, dependency management and delivery governance that keep complex, multi-team programs on scope, on budget and on date.",
                 points: ["Program Setup & PMO", "Integrated Plan & Critical-Path Management", "Dependency, Risk & Change Management", "Program Rescue & Recovery", "Vendor & Integrator Oversight", "Release, Cutover & Integration Readiness", "Executive Reporting & Delivery Metrics"]
             }
         };
